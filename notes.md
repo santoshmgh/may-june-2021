@@ -28,6 +28,26 @@
 * Every start tag should have an end tag
 * Every JSX element has one root element
 
+### Component
+
+* Every react application is made up of components
+* Components can be written in OO style or Functional style
+* In OO style every component is a class that extends React.Component
+
+``` javascript
+
+class XYZ extends React.Component {
+	render() {
+		return JSX;
+	}
+}
+
+
+```
+
+
+
+
 
 
 
