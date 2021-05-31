@@ -12,7 +12,7 @@
             function getLangsLiItems() {
                 let jsxArr = [];
                 for(let i=0; i < langs.length; i++) {
-                    let li = <li>{langs[i]}</li>;
+                    let li = <li key={langs[i]}>{langs[i]}</li>;
                     jsxArr.push(li);
                 }
                 return jsxArr;
