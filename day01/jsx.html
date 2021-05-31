@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    </head>
+    <body>
+        <input type="checkbox">
+        <div id="intuit"></div>
+        <script type="text/jsx">
+            //Create a checkbox and render it in div
+            //let label = <label>Newsletter</label>;
+            //let chk = <input type="checkbox"></input>;
+
+            let myForm = (<div>
+              <label>Newsletter</label>
+              <input type="checkbox"></input>  
+            </div>);
+
+            ReactDOM.render(myForm, document.getElementById("intuit"))
+        </script>
+    </body>
+</html>        

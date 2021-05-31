@@ -24,6 +24,9 @@
 
 ### JSX
 * JSX is a special syntax used to define UI in React
+* JSX has a very strict syntax like XML
+* Every start tag should have an end tag
+* Every JSX element has one root element
 
 
 
