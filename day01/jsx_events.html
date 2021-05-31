@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    </head>
+    <body>
+        <!-- <button onclick="doSomething();">click</button> -->
+        <div id="intuit"></div>
+        <script type="text/jsx">
+            function doSomething() {
+                console.log(new Date());
+            }
+            //onClick, onChange, onFocus, onBlur
+            //onclick, onchange, onfocus, onblur in regular JS
+            
+            let btn = <button onClick={doSomething}>Click</button>;
+            ReactDOM.render(btn, document.getElementById("intuit"))
+        </script>
+    </body>
+</html>        
