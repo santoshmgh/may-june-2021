@@ -13,12 +13,27 @@
                     super(props); //IGNORE THIS FOR NOW
                     this.state = {
                         currentTime: '',
-                        temperature: '' 
+                        temperature: '',
+                        message: '',
+                        name: '' 
                     };
                     this.getTime = this.getTime.bind(this); //WILL EXPLAIN LATER
                     this.getTemperature = this.getTemperature.bind(this); //WILL EXPLAIN LATER
+                    this.nameChanged = this.nameChanged.bind(this); //WILL EXPLAIN LATER
+                    this.computeMessage = this.computeMessage.bind(this); //WILL EXPLAIN LATER
+                }
+                
+                nameChanged(e) {
+                    this.setState({
+                        name: e.target.value
+                    });
                 }
 
+                computeMessage() {
+                    this.setState({
+                        message: "Hi " + this.state.name
+                    });
+                }
                 getTemperature() {
                     this.setState({
                         temperature: Math.random() * 100
@@ -35,6 +50,10 @@
 
                 render() {
                     return (<div>
+                        <input type="text" placeholder="Enter your name" onChange={this.nameChanged}/>
+                        <button onClick={this.computeMessage}>Click</button>
+                        <h1>{this.state.message}</h1>
+                        <hr/>
                         <button onClick={this.getTemperature}>Get temperature</button>
                         <hr/>
                         <h1>{this.state.temperature}</h1>
