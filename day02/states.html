@@ -9,17 +9,38 @@
         <script type="text/jsx">
 
             class App extends React.Component {
+                constructor(props) {
+                    super(props); //IGNORE THIS FOR NOW
+                    this.state = {
+                        currentTime: '',
+                        temperature: '' 
+                    };
+                    this.getTime = this.getTime.bind(this); //WILL EXPLAIN LATER
+                    this.getTemperature = this.getTemperature.bind(this); //WILL EXPLAIN LATER
+                }
+
+                getTemperature() {
+                    this.setState({
+                        temperature: Math.random() * 100
+                    });
+                }
 
                 getTime() {
-                    let currentTime = new Date().toString();
-                    console.log(currentTime);
+                    //this.state.currentTime = new Date().toString();
+                    this.setState({
+                        currentTime: new Date().toString(),
+                        temperature: Math.random() * 100
+                    });
                 }
 
                 render() {
-                    return(<div>
+                    return (<div>
+                        <button onClick={this.getTemperature}>Get temperature</button>
+                        <hr/>
+                        <h1>{this.state.temperature}</h1>
                         <button onClick={this.getTime}>Get time</button>
                         <hr/>
-                        <h1></h1>
+                        <h1>{this.state.currentTime}</h1>
                     </div>);
                 }
             }
