@@ -45,6 +45,24 @@ class XYZ extends React.Component {
 
 ```
 
+### State
+
+* State represents the data in a component
+* It's a plain JSON object
+* You can store any data inside a state using __this.state = {...}__
+* State is bound to UI
+* When you modify the state UI gets refreshed.
+* State can be modified by calling __setState({...})__ method
+* Technically, calling __setState()__ triggers a call to __render()__ method and the JSX gets executed again.
+
+
+
+
+
+
+
+
+
 
 
 
