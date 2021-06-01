@@ -24,6 +24,7 @@
                 }
                 
                 nameChanged(e) {
+                    console.log(e);
                     this.setState({
                         name: e.target.value
                     });
@@ -34,7 +35,8 @@
                         message: "Hi " + this.state.name
                     });
                 }
-                getTemperature() {
+                getTemperature(e) {
+                    console.log(e);
                     this.setState({
                         temperature: Math.random() * 100
                     });
