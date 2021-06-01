@@ -5,7 +5,7 @@
         <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     </head>
     <body>
-        <div id="intuit"></div>
+        <div id="root"></div>
         <script type="text/jsx">
             class Header extends React.Component {
                 render() {
@@ -29,7 +29,21 @@
                     </div>);
                 }
             }
-            ReactDOM.render(null, document.getElementById("intuit"));
+
+            class App extends React.Component {
+                render() {
+                    return  (<div>
+                        <Header/>
+                        <br/> <hr/>
+                        <Main/>
+                        <br/><br/><br/><br/><br/>
+                        <hr/>
+                        <Footer/>
+                    </div>);
+                }
+            }
+
+            ReactDOM.render(<App/>, document.getElementById("root"));
 
         </script>
     </body>
