@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/jsx">
+            class App extends React.Component {
+                constructor(props) {
+                    super(props);
+                    this.state = {
+                        name: '',
+                        message: ''
+                    };
+                    this.buttonClicked = this.buttonClicked.bind(this);
+                    this.nameChanged = this.nameChanged.bind(this);
+                }
+
+                nameChanged(e) {
+                    let name = e.target.value;
+                    this.setState({ name });
+                }
+
+                buttonClicked() {
+                    let message = `Hi ${this.state.name}`;
+                    this.setState({ message }); //Relaxed JSON
+                }
+
+                render() {
+                    console.log("render called");
+                    return (<div>
+                        <input type="text" placeholder="Enter your name" onBlur={this.nameChanged}/>
+                        <button onClick={this.buttonClicked}>Click</button>
+                        <h1>{this.state.message}</h1>
+                    </div>);
+                }
+            }
+
+            ReactDOM.render(<App/>, document.getElementById("root"));
+        
+        </script>
+    </body>
+</html>        
