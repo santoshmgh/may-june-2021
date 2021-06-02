@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/jsx">
+            class Game {
+                constructor() {
+                    this.target = Math.round(Math.random() * 100);
+                    this.attempts = 0;
+                    this.message = '';
+                    this.gameOver = false;
+                }
+                play(guess) {
+                    this.attempts += 1;
+                    let {target} = this;
+                    if(guess > target) {
+                        this.message = "Aim lower";
+                    } else if(guess < target) {
+                        this.message = "Aim higher";
+                    } else {
+                        this.message = "You've got it!!!";
+                        this.gameOver = true;
+                    }
+                }
+            }
+
+            class App extends React.Component {
+                constructor(props) {
+                    super(props);
+                    this.state = {
+                        game: new Game(),
+                        guess: -1
+                    };
+                    this.playButtonClicked = this.playButtonClicked.bind(this);
+                    this.guessChanged = this.guessChanged.bind(this);
+                }
+
+                guessChanged(e) {
+                    this.setState({ guess: e.target.value });
+                }
+
+                playButtonClicked() {
+                    let { guess, game } = this.state;
+                    game.play(guess);
+                    this.setState({ game });
+                }
+
+                render() {
+                    let  { attempts, message, gameOver } = this.state.game;
+                    return (<div>
+                        <h1>Welcome to the guessing game. Enter a number between 1 and 100</h1>
+                        <input type="number" placeholder="Enter your guess" onChange={this.guessChanged}/>
+                        <button disabled={gameOver ? true: false}  onClick={this.playButtonClicked}>Play</button>
+                        <hr/>
+                        <h1>{message}</h1>
+                        {
+                            attempts > 0 ? <h2>Attempts: {attempts}</h2> : <span/>
+                        }
+                        
+                    </div>);
+                }
+            }
+
+            ReactDOM.render(<App/>, document.getElementById("root"));
+        
+        </script>
+    </body>
+</html>        
