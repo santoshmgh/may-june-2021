@@ -5,13 +5,22 @@ import Output from './Output';
 class Parent extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            message: ''
+        };
+        this.computeMessage = this.computeMessage.bind(this);
+    }
+    computeMessage(time) {
+        this.setState({
+            message: `Current time is ${time}`
+        });
     }
 
     render() {
         return (<div>
-            <Input/>
+            <Input computeMessageHandler={this.computeMessage}/>
             <hr/>
-            <Output/>
+            <Output message={this.state.message}/>
         </div>);
     }
 }

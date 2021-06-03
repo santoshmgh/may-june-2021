@@ -8,6 +8,7 @@ class Input extends Component {
 
     getTime() {
         let now = new Date().toLocaleTimeString();
+        this.props.computeMessageHandler(now);
     }
 
     render() {
