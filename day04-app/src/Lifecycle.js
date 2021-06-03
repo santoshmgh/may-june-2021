@@ -25,8 +25,8 @@ class Lifecycle extends Component {
     }
 
     //If you want to bypass calls to render when state gets updated, return false
-    shouldComponentUpdate(obj, latest) {
-        console.log("shouldComponentUpdate called", latest, this.state.message);
+    shouldComponentUpdate(obj, latestState) {
+        console.log("shouldComponentUpdate called", latestState, this.state.message);
 		return false;
     }
 
