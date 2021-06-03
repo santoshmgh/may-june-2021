@@ -66,7 +66,7 @@
 
 ```javascript
 
-    shouldComponentUpdate(obj: any, latest: any) {
+    shouldComponentUpdate(obj, latest) {
         console.log("shouldComponentUpdate called", latest, this.state.message);
 		return true;
     }
