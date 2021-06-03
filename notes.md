@@ -54,7 +54,15 @@ class XYZ extends React.Component {
 * When you modify the state UI gets refreshed.
 * State can be modified by calling __setState({...})__ method
 * Technically, calling __setState()__ triggers a call to __render()__ method and the JSX gets executed again.
+* Calling setState which calls render() methods DOES NOT UPDATE THE REAL DOM
+* Call to render() creates a new Virtual DOM and the current Virtual DOM is compared with the previous one.
+* Updation to the real DOM happens only if the current and previous Virtual DOMs are different
 
+
+### create-react-app
+
+* sudo npm i -g create-react-app
+* create-react-app wednesday-app
 
 
 
