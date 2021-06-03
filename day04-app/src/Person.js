@@ -13,6 +13,7 @@ class Person extends Component {
     }
 
     render() {
+        console.log(this.props.data.someNumber);
         return (<div>
             <h2>Name: {this.props.name}</h2>
             <h4>Age: {this.props.age}</h4>
