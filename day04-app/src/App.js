@@ -1,10 +1,11 @@
 import './App.css';
 import {Component} from 'react';
+import Lifecycle from './Lifecycle';
 
 class App extends Component {
   render() {
     return (<div>
-      Hello react
+      <Lifecycle/>
     </div>);
   }
 }
