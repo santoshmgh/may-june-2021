@@ -6,11 +6,11 @@ import Person from './Person';
 class App extends Component {
   render() {
     return (<div>
-      <Person/>
+      <Person name="Sam" age="12"/>
       <hr/>
-      <Person/>
+      <Person name="Ram" age="23"/>
       <hr/>
-      <Person/>
+      <Person name="Mary" age="34"/>
     </div>);
   }
 }

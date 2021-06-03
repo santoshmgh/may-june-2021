@@ -7,8 +7,8 @@ class Person extends Component {
 
     render() {
         return (<div>
-            <h2>Name: Ram</h2>
-            <h4>Age: 12</h4>
+            <h2>Name: {this.props.name}</h2>
+            <h4>Age: {this.props.age}</h4>
         </div>);
     }
 }
